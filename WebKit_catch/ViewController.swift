@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet var webOutput: UIWebView!
     
+    let Token_checker = "Coming Soon"
     let OAUTH_URL = "http://82.202.246.197/Account/LoginToken"
     
     
