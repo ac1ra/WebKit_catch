@@ -60,10 +60,10 @@ class ViewController: UIViewController, UIWebViewDelegate {
             
             if p1 ?? p2 ?? p3 == nil{print(" ")} else {
                 localStorage(param: p1!, param1: p2!, param2: p3!)
-                nextPage()
+            nextPage()
             }
+
         }
-        
     }
     
     //getting parameters from URL
@@ -97,8 +97,9 @@ class ViewController: UIViewController, UIWebViewDelegate {
         
         return param; param1; param2
     }
+    // dismiss catcher to move in TableView
     func nextPage(){
-        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "nextPageTable") as! GetInfoTableViewController
-        self.navigationController?.pushViewController(secondViewController, animated: true)
+        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "Storyboard_next", sender: self)
     }
 }

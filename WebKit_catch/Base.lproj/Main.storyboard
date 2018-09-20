@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="16t-wH-p2e"/>
                     <connections>
                         <outlet property="webOutput" destination="ukz-K1-MTm" id="vxL-sI-FYK"/>
-                        <segue destination="80e-iI-3dH" kind="presentation" identifier="nextPageTable" id="U4q-4S-3qg"/>
+                        <segue destination="80e-iI-3dH" kind="showDetail" identifier="Storyboard_next" id="U4q-4S-3qg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
