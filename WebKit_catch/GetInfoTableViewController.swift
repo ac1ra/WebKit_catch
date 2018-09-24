@@ -10,12 +10,17 @@ import UIKit
 
 
 class GetInfoTableViewController: UITableViewController{
-    
-    let dataToken: [String] = []
+
+    var token = ""
+    var token_type = ""
+    var user_id = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Token: \(token)")
+        print("Token type: \(token_type)")
+        print("User ID: \(user_id)")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -41,8 +46,12 @@ class GetInfoTableViewController: UITableViewController{
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-    }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellIdentifier = "Cell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        
+//        cell.textLabel?.text = dataTn
+        
+        return cell
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

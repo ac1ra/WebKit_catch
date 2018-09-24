@@ -12,10 +12,13 @@ import SafariServices
 class ViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet var webOutput: UIWebView!
-    
-    let Token_checker = "Coming Soon"
+
     let OAUTH_URL = "http://82.202.246.197/Account/LoginToken"
     
+    let userDefaults = UserDefaults.standard
+    var key = "keySave"
+    
+    var array_tkns: [NSString] = [NSString]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,12 +58,13 @@ class ViewController: UIViewController, UIWebViewDelegate {
             let p1 = catcher(url: urlString!, param: "access_token")
             
             let p2 = catcher(url: urlString!, param: "token_type")
-            
+
             let p3 = catcher(url: urlString!, param: "user_id")
-            
+
             if p1 ?? p2 ?? p3 == nil{print(" ")} else {
                 localStorage(param: p1!, param1: p2!, param2: p3!)
-            nextPage()
+                
+                nextPage()
             }
 
         }
@@ -82,24 +86,48 @@ class ViewController: UIViewController, UIWebViewDelegate {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //read array
+        if let testArray: AnyObject = userDefaults.object(forKey: key) as AnyObject{
+            var readArray: [NSString] = testArray as! [NSString]
+            var secondVC = segue.destination as? GetInfoTableViewController
+            
+            secondVC?.token = readArray[0] as String
+            secondVC?.token_type = readArray[1] as String
+            secondVC?.user_id = readArray[2] as String
+            
+            print("Testing VC:\(readArray)")
+        }
+    }
+    
     //saving parameters at the local storage
     
-    func localStorage(param: String, param1: String, param2:String) -> String{
-        let userDefaults = UserDefaults.standard
+    func localStorage(param: String, param1: String, param2:String) -> (String,String,String){
         
-        let dateTokens = [param, param1, param2]
-        userDefaults.set(dateTokens, forKey: "keys")
+        //save
+        array_tkns.append(param as NSString)
+        array_tkns.append(param1 as NSString)
+        array_tkns.append(param2 as NSString)
         
-        let showTokens = userDefaults.object(forKey: "keys") as? [String] ?? [String]()
-        print("access_token: \(showTokens[0])")
-        print("token_type: \(showTokens[1])")
-        print("user_id: \(showTokens[2])")
+        userDefaults.set(array_tkns, forKey: key)
+        userDefaults.synchronize()
+       
+  //    let showTokens = userDefaults.object(forKey: "keys") as? [String] ?? [String]()
+//        print("access_token: \(showTokens[0])")
+//        print("token_type: \(showTokens[1])")
+//        print("user_id: \(showTokens[2])")
         
-        return param; param1; param2
+        //read
+//        if let testArray: AnyObject = userDefaults.object(forKey: key) as AnyObject{
+//            var readArray: [NSString] = testArray as! [NSString]
+//            print("Testing VC:\(readArray)")
+//        }
+        
+        return (param, param1, param2)
     }
     // dismiss catcher to move in TableView
     func nextPage(){
         dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "Storyboard_next", sender: self)
+        performSegue(withIdentifier: "segueNext", sender: self)
     }
 }

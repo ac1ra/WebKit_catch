@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4B555F921597A5200B7B059 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A4B555F821597A5200B7B059 /* Podfile */; };
+		DA5B496E2F70390C41FDE354 /* Pods_WebKit_catch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5F971E5083266AED3CD8CC /* Pods_WebKit_catch.framework */; };
 		EEAF6F13214BA55F0069AFB9 /* GetInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAF6F12214BA55F0069AFB9 /* GetInfoTableViewController.swift */; };
 		EEE9ABAE2147FA80003EB5B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9ABAD2147FA80003EB5B0 /* AppDelegate.swift */; };
 		EEE9ABB02147FA80003EB5B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9ABAF2147FA80003EB5B0 /* ViewController.swift */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		179210C5E403FCC8C326B180 /* Pods-WebKit_catch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebKit_catch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebKit_catch/Pods-WebKit_catch.debug.xcconfig"; sourceTree = "<group>"; };
+		A4B555F821597A5200B7B059 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		B5C4DF31643E091EF3376959 /* Pods-WebKit_catch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebKit_catch.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebKit_catch/Pods-WebKit_catch.release.xcconfig"; sourceTree = "<group>"; };
+		BA5F971E5083266AED3CD8CC /* Pods_WebKit_catch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebKit_catch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAF6F12214BA55F0069AFB9 /* GetInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoTableViewController.swift; sourceTree = "<group>"; };
 		EEE9ABAA2147FA80003EB5B0 /* WebKit_catch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebKit_catch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEE9ABAD2147FA80003EB5B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5B496E2F70390C41FDE354 /* Pods_WebKit_catch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C503AAD0243955137CBAD1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA5F971E5083266AED3CD8CC /* Pods_WebKit_catch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3571FDE8F2E63FD36B1447A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				179210C5E403FCC8C326B180 /* Pods-WebKit_catch.debug.xcconfig */,
+				B5C4DF31643E091EF3376959 /* Pods-WebKit_catch.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EEE9ABA12147FA80003EB5B0 = {
 			isa = PBXGroup;
 			children = (
+				A4B555F821597A5200B7B059 /* Podfile */,
 				EEE9ABAC2147FA80003EB5B0 /* WebKit_catch */,
 				EEE9ABAB2147FA80003EB5B0 /* Products */,
+				B3571FDE8F2E63FD36B1447A /* Pods */,
+				4C503AAD0243955137CBAD1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEE9ABBC2147FA82003EB5B0 /* Build configuration list for PBXNativeTarget "WebKit_catch" */;
 			buildPhases = (
+				07E8F5098A32D0D9126A3B1E /* [CP] Check Pods Manifest.lock */,
 				EEE9ABA62147FA80003EB5B0 /* Sources */,
 				EEE9ABA72147FA80003EB5B0 /* Frameworks */,
 				EEE9ABA82147FA80003EB5B0 /* Resources */,
+				E5DB10135AF000C171054862 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,11 +156,59 @@
 			files = (
 				EEE9ABB82147FA82003EB5B0 /* LaunchScreen.storyboard in Resources */,
 				EEE9ABB52147FA82003EB5B0 /* Assets.xcassets in Resources */,
+				A4B555F921597A5200B7B059 /* Podfile in Resources */,
 				EEE9ABB32147FA80003EB5B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07E8F5098A32D0D9126A3B1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebKit_catch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5DB10135AF000C171054862 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WebKit_catch/Pods-WebKit_catch-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebKit_catch/Pods-WebKit_catch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EEE9ABA62147FA80003EB5B0 /* Sources */ = {
@@ -282,6 +359,7 @@
 		};
 		EEE9ABBD2147FA82003EB5B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 179210C5E403FCC8C326B180 /* Pods-WebKit_catch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +377,7 @@
 		};
 		EEE9ABBE2147FA82003EB5B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5C4DF31643E091EF3376959 /* Pods-WebKit_catch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
