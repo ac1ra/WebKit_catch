@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class GetInfoTableViewController: UITableViewController{
 
@@ -15,17 +15,26 @@ class GetInfoTableViewController: UITableViewController{
     var token_type = ""
     var user_id = ""
     
+    public enum HTTPMethod: String{
+        case get = "GET"
+        case post = "POST"
+        case delete = "DELETE"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Token: \(token)")
         print("Token type: \(token_type)")
         print("User ID: \(user_id)")
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let headers: HTTPHeaders = [
+            "Authorization": "\(token_type) \(token)",
+            "Accept": "application/json"
+        ]
+        
+        Alamofire.request("http://82.202.246.197/api/v1.0/Exchanges/all", headers: headers).responseJSON { response in
+            debugPrint(response)
+        }
     }
 
     override func didReceiveMemoryWarning() {

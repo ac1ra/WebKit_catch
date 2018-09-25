@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		179210C5E403FCC8C326B180 /* Pods-WebKit_catch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebKit_catch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebKit_catch/Pods-WebKit_catch.debug.xcconfig"; sourceTree = "<group>"; };
-		A4B555F821597A5200B7B059 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		A4B555F821597A5200B7B059 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B5C4DF31643E091EF3376959 /* Pods-WebKit_catch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebKit_catch.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebKit_catch/Pods-WebKit_catch.release.xcconfig"; sourceTree = "<group>"; };
 		BA5F971E5083266AED3CD8CC /* Pods_WebKit_catch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebKit_catch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAF6F12214BA55F0069AFB9 /* GetInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoTableViewController.swift; sourceTree = "<group>"; };
@@ -169,15 +169,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-WebKit_catch-checkManifestLockResult.txt",
 			);
@@ -191,15 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WebKit_catch/Pods-WebKit_catch-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
