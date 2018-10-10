@@ -53,16 +53,18 @@ class ViewController: UIViewController, UIWebViewDelegate {
         let urlString = webView.request?.url?.absoluteString
         
         if urlString == nil {
-            print("NIL pizdui otsuda")
+            print("error: skip NIL")
         } else {
             let p1 = catcher(url: urlString!, param: "access_token")
             
             let p2 = catcher(url: urlString!, param: "token_type")
 
             let p3 = catcher(url: urlString!, param: "user_id")
+            
+            let p4 = catcher(url: urlString!, param: "refresh_token")
 
-            if p1 ?? p2 ?? p3 == nil{print(" ")} else {
-                localStorage(param: p1!, param1: p2!, param2: p3!)
+            if p1 ?? p2 ?? p3 ?? p4 == nil{print(" ")} else {
+                localStorage(param: p1!, param1: p2!, param2: p3!, param3: p4!)
                 
                 nextPage()
             }
@@ -90,11 +92,12 @@ class ViewController: UIViewController, UIWebViewDelegate {
         //read array
         if let testArray: AnyObject = userDefaults.object(forKey: key) as AnyObject{
             var readArray: [NSString] = testArray as! [NSString]
-            var secondVC = segue.destination as? GetInfoTableViewController
+            var secondVC = segue.destination as? API_exchanges_VC
             
             secondVC?.token = readArray[0] as String
             secondVC?.token_type = readArray[1] as String
             secondVC?.user_id = readArray[2] as String
+            secondVC?.refresh_token = readArray[3] as String
             
             print("Testing VC:\(readArray)")
         }
@@ -102,12 +105,13 @@ class ViewController: UIViewController, UIWebViewDelegate {
     
     //saving parameters at the local storage
     
-    func localStorage(param: String, param1: String, param2:String) -> (String,String,String){
+    func localStorage(param: String, param1: String, param2:String, param3: String) -> (String,String,String,String){
         
         //save
         array_tkns.append(param as NSString)
         array_tkns.append(param1 as NSString)
         array_tkns.append(param2 as NSString)
+        array_tkns.append(param3 as NSString)
         
         userDefaults.set(array_tkns, forKey: key)
         userDefaults.synchronize()
@@ -123,11 +127,11 @@ class ViewController: UIViewController, UIWebViewDelegate {
 //            print("Testing VC:\(readArray)")
 //        }
         
-        return (param, param1, param2)
+        return (param, param1, param2, param3)
     }
     // dismiss catcher to move in TableView
     func nextPage(){
         dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "segueNext", sender: self)
+        performSegue(withIdentifier: "nextAPI", sender: self)
     }
 }
