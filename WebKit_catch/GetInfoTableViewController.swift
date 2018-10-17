@@ -144,8 +144,6 @@ extension GetInfoTableViewController: UITableViewDataSource, UITableViewDelegate
     private func configureCell(cell: ItemCell, for indexPath: IndexPath){
         let item = items[indexPath.row]
         
-        
-        
         cell.idLabel.text = "\(item.id)"
         cell.titleLabel.text = "\(item.title)"
     }

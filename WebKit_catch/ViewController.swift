@@ -115,20 +115,10 @@ class ViewController: UIViewController, UIWebViewDelegate {
         
         userDefaults.set(array_tkns, forKey: key)
         userDefaults.synchronize()
-       
-  //    let showTokens = userDefaults.object(forKey: "keys") as? [String] ?? [String]()
-//        print("access_token: \(showTokens[0])")
-//        print("token_type: \(showTokens[1])")
-//        print("user_id: \(showTokens[2])")
-        
-        //read
-//        if let testArray: AnyObject = userDefaults.object(forKey: key) as AnyObject{
-//            var readArray: [NSString] = testArray as! [NSString]
-//            print("Testing VC:\(readArray)")
-//        }
         
         return (param, param1, param2, param3)
     }
+    
     // dismiss catcher to move in TableView
     func nextPage(){
         dismiss(animated: true, completion: nil)

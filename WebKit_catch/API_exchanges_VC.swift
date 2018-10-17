@@ -52,10 +52,12 @@ class API_exchanges_VC: UIViewController {
                     print("Cannot move to array")
                     return
             }
-print(response)
+            
+            print(response)
+            
             for itm in arrayOfItems{
                 let item = item_user(id_itm: itm["id"] as! Int, apiKey_itm: itm["apiKey"] as! String, apiSecret_itm: itm["apiSecret"] as! String, exchangeId_itm: itm["exchangeId"] as! Int, exchangeName_itm: itm["exchangeName"] as! String)
-//                (api ,id_itm: itm["id"] as! Int, exchangeName_itm: itm["exchangeName"] as! String)
+                
                 items_api.append(item)
                 items_api = items_api.sorted(by: {$0.id_itm < $1.id_itm})
             }
@@ -66,15 +68,23 @@ print(response)
         }
         
     }
+    func alamofireDel(){
+        let headers: HTTPHeaders = [
+            "Authorization" : "\(self.token_type) \(self.token)",
+            "Accept" : "application/json"
+        ]
+        Alamofire.request("http://82.202.246.197/api/v1.0/Exchanges/ForUser", method: .delete, headers: headers).responseJSON{ response in
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.hidesBackButton = true
         print("Token: \(token)")
         print("Token type: \(token_type)")
         print("User ID: \(user_id)")
         
         alamofireGet()
-        // Do any additional setup after loading the view.
     }
 }
 
